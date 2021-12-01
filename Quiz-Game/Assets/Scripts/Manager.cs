@@ -65,6 +65,7 @@ public class Manager : MonoBehaviour
 
     public void start_play() {
         currentLevel = 0;
+        Shuffle();
         Menu.SetActive(false);
         Levels[currentLevel].SetActive(true);
         score_show.gameObject.SetActive(true);
@@ -99,5 +100,14 @@ public class Manager : MonoBehaviour
         score_show.text = "Score:" + score.ToString();
     }
 
-
+    private void Shuffle()
+    {
+        for (int i = 0; i < Levels.Length; i++)
+        {
+            int rnd = Random.Range(0, Levels.Length);
+            GameObject temp = Levels[rnd];
+            Levels[rnd] = Levels[i];
+            Levels[i] = temp;
+        }
+    }
 }
