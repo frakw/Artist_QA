@@ -24,7 +24,8 @@
     <script type="text/javascript">
       var resize = function() {
         document.getElementById("unityContainer").style.width = innerWidth + "px";
-        document.getElementById("unityContainer").style.height = (innerWidth*9/16 - 20) + "px";
+        if(innerWidth > innerHeight)
+          document.getElementById("unityContainer").style.height = innerHeight + "px";
       }
   
       resize();
