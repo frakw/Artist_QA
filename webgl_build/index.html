@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div id="unityContainer"></div>
       <div class="footer">
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
         <div class="title">Quiz Game</div>
@@ -23,8 +23,14 @@
 
     <script type="text/javascript">
       var resize = function() {
-          document.getElementById("unityContainer").style.width = innerWidth + "px";
-          document.getElementById("unityContainer").style.height = (innerWidth*9/16) + "px";
+        if(innerWidth > innerHeight){
+          document.getElementsByClassName("webgl-content").style.width = "100%";
+          document.getElementsByClassName("webgl-content").style.height = "100%";
+        }
+        else{
+          document.getElementsByClassName("webgl-content").style.width = innerWidth + "px";
+          document.getElementsByClassName("webgl-content").style.height = (innerWidth*9/16) + "px";
+        }
       }
   
       resize();
