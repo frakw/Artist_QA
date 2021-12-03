@@ -23,14 +23,8 @@
 
     <script type="text/javascript">
       var resize = function() {
-        if(innerWidth > innerHeight){
-          document.getElementsByClassName("webgl-content").style.width = "100%";
-          document.getElementsByClassName("webgl-content").style.height = "100%";
-        }
-        else{
-          document.getElementsByClassName("webgl-content").style.width = innerWidth + "px";
-          document.getElementsByClassName("webgl-content").style.height = (innerWidth*9/16) + "px";
-        }
+        document.getElementById("unityContainer").style.width = innerWidth + "px";
+        document.getElementById("unityContainer").style.height = (innerWidth*9/16 - 20) + "px";
       }
   
       resize();
