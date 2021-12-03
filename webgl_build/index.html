@@ -13,14 +13,18 @@
     </script>
   </head>
   <body>
-    <div class="webgl-content" style="display: table; width: 100%; height: 100%;">
-      <div id="unityContainer"></div>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Quiz Game</div>
+      </div>
     </div>
 
     <script type="text/javascript">
       var resize = function() {
-        document.getElementById("unityContainer").style.width = innerWidth + "px";
-        document.getElementById("unityContainer").style.height = innerHeight + "px";
+          document.getElementById("unityContainer").style.width = innerWidth + "px";
+          document.getElementById("unityContainer").style.height = (int)(innerWidth*9/16) + "px";
       }
   
       resize();
