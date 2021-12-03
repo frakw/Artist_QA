@@ -19,7 +19,10 @@
 
     <script type="text/javascript">
       var resize = function() {
-        document.getElementById("unityContainer").style.width = innerWidth + "px";
+        if(innerWidth/innerHeight > 1100/600)
+          document.getElementById("unityContainer").style.width = innerHeight*16.0/9.0 + "px";
+        else
+          document.getElementById("unityContainer").style.width = innerWidth + "px";
         if(innerWidth > innerHeight)
           document.getElementById("unityContainer").style.height = innerHeight + "px";
         else
